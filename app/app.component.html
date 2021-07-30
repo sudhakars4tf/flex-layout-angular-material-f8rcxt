@@ -1,0 +1,67 @@
+<mat-card fxLayout="row" fxLayoutGap="0rem">
+  <div fxLayout="row" fxLayoutAlign="end center" fxFlex="1 1 50%" fxLayoutGap="1rem">
+    <button mat-raised-button color="accent" (click)="newRows()">Add</button>
+    <button [disabled]="selectedRow != undefined && selectedRow.isBevoorschotting" mat-raised-button color="accent"
+        (click)="updateRows()">Update</button>
+    <button mat-raised-button color="warn" (click)="deleteRows()" [disabled]='!isAdmin'>Delete</button>
+    <button mat-raised-button color="accent" (click)="refresh(0)">Refresh</button>
+  </div>
+  <div fxLayout="row" fxFlex="1 1 50%" fxLayoutAlign="start center">
+    <mat-checkbox (change)="onclickMutatieVelden()" [(ngModel)]="toonMutatievelden">
+      <p>Mutatie velden aan...</p>
+    </mat-checkbox>
+    <mat-checkbox (change)="onclickMaakInactief()" *ngIf="selectedRow" [(ngModel)]="!selectedRow.isActief">
+      <p>Maak Inactief...</p>
+    </mat-checkbox>
+  </div>
+</mat-card>
+<br/>
+<br/>
+
+<div fxLayout.gt-xs="column" fxLayout="row" fxLayoutGap="1rem" class="mat-elevation-z8">
+  <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="1rem" class="mat-elevation-z0">
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid green;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid red;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+  </div>
+
+  <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="1rem" class="mat-elevation-z0">
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid green;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid red;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+  </div>
+
+  <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap="1rem" class="mat-elevation-z0">
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid green;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+    <div fxLayout.gt-xs="row" fxLayout="column" fxLayoutGap=".4rem" fxFlex="1 1 50%" style="border:0px solid red;">
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="end center" fxFlex="1 1 50%"
+        style="font-weight:600;">First Name:</div>
+      <div fxLayout="row" fxLayoutAlign="start center" fxLayoutAlign.gt-xs="start center" fxFlex="1 1 50%">First Name
+        Value</div>
+    </div>
+  </div>
+
+</div>
